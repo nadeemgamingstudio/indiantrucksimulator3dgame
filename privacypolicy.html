@@ -278,31 +278,49 @@
             text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
         }
         
-        /* Scroll to Top Button -->
-        <div class="scroll-top-btn" id="scrollTopBtn">
-            <i class="fas fa-arrow-up"></i>
-        </div>
-        
-        .scroll-top-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #FF6B00, #0077FF);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(255, 107, 0, 0.7);
-        }
+        /* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 40px;  /* Changed from 30px to 40px */
+    right: 40px;   /* Changed from 30px to 40px */
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #FF6B00, #0077FF);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 101;  /* Increased from 99 to 101 */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.7);
+    transform: translateY(0);
+}
+
+.scroll-top-btn.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(255, 107, 0, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 25px;  /* Changed from 20px to 25px */
+        right: 25px;   /* Changed from 20px to 25px */
+        font-size: 20px;
+    }
+}
         
         .scroll-top-btn.active {
             opacity: 1;
@@ -1589,3 +1607,4 @@
     </script>
 </body>
 </html>
+
